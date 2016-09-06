@@ -1,0 +1,9 @@
+---
+- name: Install git-lfs via Homebrew
+  package:
+    name: git-lfs
+    state: latest
+  when: ansible_os_family == "Darwin"
+
+- name: Set up Git LFS hooks
+  command: git lfs install
